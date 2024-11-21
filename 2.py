@@ -27,8 +27,6 @@ def cTask():
     lowerThanAvarage = 0
     avarage = sum(globalList) / len(globalList)
 
-    print(avarage)
-
     for i in range(len(globalList)):
         if (globalList[i] > avarage):
             higherThanAvarage += 1
