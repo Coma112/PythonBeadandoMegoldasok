@@ -1,4 +1,5 @@
 abList = [2, 0, 3, 1, 1, 3, 1, 2, 1, 1, 1, 3]
+cdList = [0, 0, 0, 1, 1, 2, 2, 2, 1, 1, 0, 0]
 
 def aTask():
     kszWinCount = 0
@@ -31,8 +32,8 @@ def bTask():
     print("Igen volt ilyen" if isThereEqual else "Nem volt ilyen")
 
 def cTask():
-    kblMatches = abList[::2]
-    kszMatches = abList[1::2]
+    kblMatches = cdList[::2]
+    kszMatches = cdList[1::2]
     zeroCount = 0
 
     for i in range(len(kblMatches)):
@@ -44,3 +45,6 @@ def cTask():
 aTask()
 bTask()
 cTask()
+
+
+# A d feladatot nem értem :(
