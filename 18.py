@@ -29,22 +29,45 @@ def decodeMorse(code: str) -> str:
 
 sentence = input()
 
+def aTask():
+    questions = []
+    currentSentence = ""
+    longestQuestion = ""
+    
+    for char in sentence:
+        currentSentence += char
+        
+        if char in '.!?':
+            if currentSentence.strip().endswith('?'):
+                questions.append(currentSentence.strip())
+            currentSentence = ""
+
+    for i in questions:
+        if len(i) > len(longestQuestion):
+            longestQuestion = i
+
+    for i in range(len(questions)):
+        if (questions[i] == longestQuestion):
+            if (longestQuestion):
+                print(f"A leghosszabb kérdő mondat: {i + 1}")
+            else:
+                print("Nincsen kérdő.")
+
+    
 def bTask():
     questionCount = 0 # Kérdő
     exclamationCount = 0 # Felszolító
     statementCount = 0 # Kijelentő
 
-    sentences = [sentence.strip() for sentence in sentence.split('.') if sentence]
-
-    for currentCentence in sentences:
-        if (currentCentence.endswith("?")):
-            questionCount += 1
-        elif (currentCentence.endswith(".")):
+    for char in sentence:
+        if (char == "."):
             statementCount += 1
-        else:
+        if (char == "?"):
+            questionCount += 1
+        if (char == "!"):
             exclamationCount += 1
-
-
+    
+    print(f"kérdő: {questionCount}, felszólító: {exclamationCount}, kijelentő: {statementCount}")
  
 def cTask():
     text = input()
@@ -56,6 +79,9 @@ def dTask():
 
     print(f"{code} -> {decodeMorse(code)}")
 
+
+aTask()
+bTask()
 cTask()
 dTask()
 
